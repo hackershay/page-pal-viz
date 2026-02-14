@@ -15,11 +15,11 @@ interface ControlPanelProps {
 const ALGORITHMS: Algorithm[] = ['FIFO', 'LRU', 'Optimal'];
 
 export default function ControlPanel({ onRun, onReset, isRunning }: ControlPanelProps) {
-  const [refStringInput, setRefStringInput] = useState('7,0,1,2,0,3,0,4,2,3,0,3,2');
-  const [frameCount, setFrameCount] = useState(3);
+  const [refStringInput, setRefStringInput] = useState('1,2,3,4,1,2,5,1,2,3,4,5');
+  const [frameCount, setFrameCount] = useState(4);
   const [selectedAlgos, setSelectedAlgos] = useState<Algorithm[]>(['FIFO', 'LRU', 'Optimal']);
   const [strLength, setStrLength] = useState(15);
-  const [maxPage, setMaxPage] = useState(8);
+  const [maxPage, setMaxPage] = useState(6);
 
   const toggleAlgo = (algo: Algorithm) => {
     setSelectedAlgos((prev) =>

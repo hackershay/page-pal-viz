@@ -10,7 +10,9 @@ interface FrameMatrixProps {
 export default function FrameMatrix({ result }: FrameMatrixProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const { snapshots, referenceString, frameCount } = result;
-  const snapshot = snapshots[currentStep];
+  const snapshot = snapshots[currentStep] ?? snapshots[0];
+
+  if (!snapshot) return null;
 
   return (
     <div className="rounded-lg border border-border bg-card p-5 space-y-4">
